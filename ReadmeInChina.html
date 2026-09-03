@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to China, MONA! 🇨🇳</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #de2910;
+      --gold: #ffde00;
+      --bg-gradient: linear-gradient(135deg, #fffaf5 0%, #f7ebe1 100%);
+      --card-bg: rgba(255, 255, 255, 0.9);
+      --text-main: #2b2d42;
+      --text-muted: #6c757d;
+      --shadow: 0 10px 30px rgba(222, 41, 16, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      min-height: 100vh;
+      line-height: 1.7;
+      padding: 40px 20px;
+    }
+
+.bg-decor {
+  position: fixed;
+  font-size: 2rem;
+  opacity: 0.15;
+  user-select: none;
+  z-index: 0;
+  animation: drift 12s ease-in-out infinite;
+}
+
+.decor-1 {
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.decor-2 {
+  top: 20%;
+  right: 8%;
+  animation-delay: -3s;
+}
+
+.decor-3 {
+  bottom: 15%;
+  left: 7%;
+  animation-delay: -6s;
+}
+
+.decor-4 {
+  bottom: 10%;
+  right: 5%;
+  animation-delay: -9s;
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(35px, -25px) rotate(8deg);
+  }
+
+  50% {
+    transform: translate(-20px, -50px) rotate(-8deg);
+  }
+
+  75% {
+    transform: translate(-40px, 15px) rotate(6deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .flag-icon {
+      width: 44px;
+      height: 29px;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .letter-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .letter-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, var(--primary), var(--gold));
+    }
+
+    .salutation {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    .letter-body p {
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+    }
+
+    .highlight-box {
+      background: #fff3f0;
+      border-left: 4px solid var(--primary);
+      padding: 15px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 20px 0;
+      font-weight: 600;
+    }
+
+    .suki-banner {
+      background: linear-gradient(135deg, #de2910, #b81d08);
+      color: white;
+      padding: 20px;
+      border-radius: 16px;
+      text-align: center;
+      margin-top: 25px;
+      box-shadow: 0 6px 20px rgba(222, 41, 16, 0.25);
+    }
+
+    .suki-banner h3 {
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
+    .photo-card {
+      background: var(--card-bg);
+      padding: 16px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .photo-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .photo-wrapper {
+      width: 100%;
+      height: 320px;
+      position: relative;
+      overflow: hidden;
+      border: 3px solid var(--primary);
+      border-radius: 14px;
+      background: #eee;
+    }
+
+    .photo-wrapper img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .cropped-image {
+      object-fit: cover;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .full-image {
+      object-fit: contain;
+      opacity: 0;
+      transform: scale(0.96);
+      background: #eee;
+    }
+
+    .photo-card:hover .cropped-image {
+      opacity: 0;
+    }
+
+    .photo-card:hover .full-image {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .caption {
+      padding: 15px 10px 5px;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding-bottom: 20px;
+    }
+
+    .valediction {
+      color: var(--text-muted);
+    }
+
+    .signature {
+      font-family: 'Caveat', cursive;
+      font-size: 2.8rem;
+      color: var(--primary);
+      line-height: 1;
+      margin-top: 5px;
+    }
+    .music-button {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  z-index: 10;
+  padding: 20px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 35px;
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  animation: jiggle 0.7s ease-in-out infinite;
+}
+.physics-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #de2910, #8f1608);
+  padding: 20px;
+}
+
+.physics-game {
+  width: min(100%, 430px);
+  padding: 35px 25px;
+  text-align: center;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.physics-icon {
+  font-size: 3rem;
+}
+
+.physics-game h2 {
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.physics-game p {
+  margin-bottom: 20px;
+}
+
+.physics-game input {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.physics-game button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#physics-message {
+  min-height: 24px;
+  margin: 12px 0 0;
+  color: var(--primary);
+  font-weight: 600;
+}
+  </style>
+</head>
+
+<body>
+
+<div id="physics-gate" class="physics-gate">
+  <div class="physics-game">
+    <div class="physics-icon">⚡</div>
+    <h2>Physics Challenge</h2>
+    <p>
+      A 2 kg object accelerates at 10 m/s².<br>
+      What force is being applied?
+    </p>
+
+    <input id="physics-answer" type="text" placeholder="Answer in newtons">
+    <button id="physics-submit" type="button">Unlock Website</button>
+    <p id="physics-message"></p>
+  </div>
+</div>
+
+<audio id="background-music" loop>
+  <source src="Photos/20200324.mp3" type="audio/mpeg">
+</audio>
+
+<button id="music-button" class="music-button" type="button">
+  🎵 Play music
+</button>
+<script>
+  const gate = document.getElementById('physics-gate');
+  const answer = document.getElementById('physics-answer');
+  const submit = document.getElementById('physics-submit');
+  const message = document.getElementById('physics-message');
+
+  function checkAnswer() {
+    const userAnswer = answer.value.trim().toLowerCase();
+
+    if (userAnswer === '20' || userAnswer === '20 n' || userAnswer === '20 newtons') {
+      gate.remove();
+      document.body.style.overflow = 'auto';
+    } else {
+      message.textContent = 'Not quite! Use F = m × a.';
+      answer.value = '';
+      answer.focus();
+    }
+  }
+
+  submit.addEventListener('click', checkAnswer);
+
+  answer.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') checkAnswer();
+  });
+
+  document.body.style.overflow = 'hidden';
+  answer.focus();
+</script> 
+
+<script>
+  const music = document.getElementById('background-music');
+  const musicButton = document.getElementById('music-button');
+
+  musicButton.addEventListener('click', async () => {
+    await music.play();
+    musicButton.textContent = '🎵 Music playing';
+    musicButton.classList.add('playing');
+  });
+</script>
+
+  <div class="bg-decor decor-1">🐧</div>
+  <div class="bg-decor decor-2">🐧</div>
+  <div class="bg-decor decor-3">🐧</div>
+  <div class="bg-decor decor-4">🐧</div>
+
+  <div class="container">
+    <header>
+      <div class="badge">✈️ Landed Safely!</div>
+      <h1>
+        WELCOME TO CHINA MONA!!! 🇨🇳
+      </h1>
+    </header>
+
+    <main>
+      <article class="letter-card">
+        <div class="salutation">HI SUPER-SENIOR or "Mona" I guess...</div>
+
+        <div class="letter-body">
+          <p>
+            I hope your flight was smooth and that you're settling into China nicely!
+             I wanted to make this page as a small token of appreciation to send you off. 
+             Consider this a little reminder of how much you're missed back home as you start this amazing new chapter at ZJU!
+          </p>
+
+          <div class="highlight-box">
+            ⚡ AP Physics … I truly couldn't have asked for a better lab partner. 
+            From late-night reviewing sessions to finishing all those labsheets and impossible calculations, 
+            I genuinely couldn't have survived it without you(Thanks for doing allll the work ;).
+          </div>
+
+          <p>
+            Thank you for all the laughs, your constant guidance, and for turning what could have been a stressful 
+            class into some of my favorite memories. We are all so proud of you and are going to miss you tons while you're at ZJU!
+          </p>
+
+          <div class="suki-banner">
+            <h3>🍲 Dont think I forgot...</h3>
+            <p>
+              The moment you come back, we are going straight to eat at
+              <strong>Bonus Suki</strong> again. No excuses!    
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <h2 class="section-title">Memory Lane ✨</h2>
+
+      <div class="gallery">
+        <div class="photo-card">
+          <div class="photo-wrapper">
+            <img class="cropped-image"
+              src="C:\Users\POLLUX\Documents\Coding\China\Photos\Monawinnie.jpg"
+              alt="Mona and Mini">
+            <img class="full-image"
+              src="C:\Users\POLLUX\Documents\Coding\China\Photos\Monawinnie.jpg"
+              alt="Mona and Mini">
+          </div>
+          <div class="caption">🐶 Mona & the adorable Mini</div>
+        </div>
+
+        <div class="photo-card">
+          <div class="photo-wrapper">
+            <img class="cropped-image"
+              src="C:\Users\POLLUX\Documents\Coding\China\Photos\Graduation.JPG"
+              alt="Graduation 2026">
+            <img class="full-image"
+              src="C:\Users\POLLUX\Documents\Coding\China\Photos\Graduation.JPG"
+              alt="Graduation 2026">
+          </div>
+          <div class="caption">🎓 Graduation 2026</div>
+        </div>
+
+        <div class="photo-card">
+          <div class="photo-wrapper">
+            <img class="cropped-image"
+              src="C:\Users\POLLUX\Documents\Coding\China\Photos\791560613_2127867171420415_114002671513577868_n.jpg"
+              alt="AP Physics and memories">
+            <img class="full-image"
+              src="C:\Users\POLLUX\Documents\Coding\China\Photos\791560613_2127867171420415_114002671513577868_n.jpg"
+              alt="AP Physics and memories">
+          </div>
+          <div class="caption">📐 From AP Physics labs to memories</div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="valediction">With love,</div>
+      <div class="signature">Your Best Friend</div>
+    </footer>
+  </div>
+</body>
+</html>
+````
